@@ -13,6 +13,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^2.0.4",
+    "@heroicons/react": "^2.1.3",
     "@mui/base": "^5.0.0-beta.40",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
