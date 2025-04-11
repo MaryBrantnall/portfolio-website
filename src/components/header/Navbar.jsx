@@ -11,13 +11,13 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: 'Home', href: 'Home', current: true },
-  { name: 'About', href: 'About', current: false },
+  { name: 'Resume', href: 'Resume', current: false },
   { name: 'Projects', href: 'Projects', current: false },
   { name: 'Contact', href: 'Contact', current: false },
 ]
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ') 
 }
 
 const Navbar = () => {

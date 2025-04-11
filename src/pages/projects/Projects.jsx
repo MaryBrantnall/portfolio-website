@@ -1,7 +1,11 @@
+import GitHubRepos from "../../components/GitHubRepos/GitHubRepos"
 
 const Projects = () => {
   return (
-    <div>Projects</div>
+    <div>
+      <GitHubRepos />
+    </div>
+    
   )
 }
 
