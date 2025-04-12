@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Disclosure,
   DisclosureButton,
@@ -9,18 +10,49 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { Link } from "react-router-dom";
 
-const navigation = [
-  { name: 'Home', href: 'Home', current: true },
-  { name: 'Resume', href: 'Resume', current: false },
-  { name: 'Projects', href: 'Projects', current: false },
-  { name: 'Contact', href: 'Contact', current: false },
-]
+// const navigation = [
+//   { name: 'Home', href: 'Home', current: true },
+//   { name: 'Resume', href: 'Resume', current: false },
+//   { name: 'Projects', href: 'Projects', current: false },
+//   { name: 'Contact', href: 'Contact', current: false },
+// ]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ') 
 }
 
 const Navbar = () => {
+
+  const location = useLocation();
+  
+  const [navItems, setNavItems] = useState([
+    { name: 'Home', href: 'Home', current: false },
+    { name: 'Resume', href: 'Resume', current: false },
+    { name: 'Projects', href: 'Projects', current: false },
+    { name: 'Contact', href: 'Contact', current: false },
+  ]);
+
+  // Update current state based on route changes
+  useEffect(() => {
+    const currentPath = location.pathname.substring(1) || 'Home';
+    setNavItems(prevItems => 
+      prevItems.map(item => ({
+        ...item,
+        current: item.href === currentPath
+      }))
+    );
+  }, [location]);
+
+  const handleNavClick = (clickedHref) => {
+    setNavItems(prevItems => 
+      prevItems.map(item => ({
+        ...item,
+        current: item.href === clickedHref
+      }))
+    );
+  };
+
+  
   return (
     <Disclosure as="nav" className="text-eggshell bg-brunswick_green">
       {({ open }) => (
@@ -43,18 +75,19 @@ const Navbar = () => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={`/${item.href}`}
-                        className={classNames(
-                          item.current ? 'bg-ash_gray-300 text-brunswick_green' : 'text-eggshell hover:bg-ash_gray-300 hover:text-brunswick_green',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </Link>
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={`/${item.href}`}
+                      onClick={() => handleNavClick(item.href)}
+                      className={classNames(
+                        item.current ? 'bg-zomp text-brunswick_green' : 'text-eggshell hover:bg-ash_gray hover:text-brunswick_green',
+                        'rounded-md px-3 py-2 text-sm font-medium'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                      {item.name}
+                    </Link>
                     ))}
                   </div>
                 </div>
@@ -67,12 +100,13 @@ const Navbar = () => {
 
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={`/${item.href}`}
+                  onClick={() => handleNavClick(item.href)}
                   className={classNames(
-                    item.current ? 'bg-ash_gray-300 text-brunswick_green' : 'text-eggshell hover:bg-ash_gray-300 hover:text-brunswick_green',
+                    item.current ? 'bg-ash_gray text-brunswick_green' : 'text-eggshell hover:bg-ash_gray hover:text-brunswick_green',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -81,7 +115,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-          </DisclosurePanel> 
+          </DisclosurePanel>
         </>
       )}
     </Disclosure>

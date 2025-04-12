@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 
 
-const AnimatedAvatar = () => {
+const AnimatedAvatar = ({ onClick }) => {
     const [isAnimating, setIsAnimating] = useState(false);
 
   const handleClick = () => {
@@ -12,7 +12,7 @@ const AnimatedAvatar = () => {
 
 
   return (
-    <div className="relative flex justify-center items-center">
+    <div onClick = {onClick} className="relative flex justify-center items-center">
         <div className="relative">
           <Avatar
             alt="Remy Sharp"
@@ -35,7 +35,6 @@ const AnimatedAvatar = () => {
             }}
             className="group"
           />
-         
     </div></div>
   );
 };

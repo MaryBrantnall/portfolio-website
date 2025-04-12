@@ -1,73 +1,73 @@
-
-import { useState } from 'react';
-import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import React, { useState, useRef, useEffect } from 'react';
 import AnimatedAvatar from '../../components/AnimatedAvatar/AnimatedAvatar';
-
+import { motion } from 'framer-motion';
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const avatarRef = useRef(null);
+
+  const toggleDiv = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Avatar animation variants
+  const avatarVariants = {
+    initial: { 
+      x: 0, // Start in the middle
+    },
+    animate: {
+      x: -150, // Move left (adjust as needed)
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
+  // Text animation variants
+  const textVariants = {
+    initial: { x: 100, opacity: 0 },
+    animate: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
   return (
-    <div>
-    <div classname="hover:border-zomp-100">
-     <AnimatedAvatar />
-      <div className="h-screen w-full pt-32 px-4">
-      <div className="mx-auto w-full max-w-lg divide-y divide-white/5 rounded-xl bg-white/5">
-        <Disclosure as="div" className="p-6" defaultOpen={true}>
-          <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
-              Who am I?
-            </span>
-            <ChevronDownIcon className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
-          </DisclosureButton>
-          <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
-            My name is Mary, and I am an artist and developer hybrid always looking to make new things!
-          </DisclosurePanel>
-        </Disclosure>
-        <Disclosure as="div" className="p-6">
-          <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="text-sm/6 font-medium text-white group-data-[hover]:text-white/80">
-              Some cool skills I have
-            </span>
-            <ChevronDownIcon className="size-5 fill-white/60 group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
-          </DisclosureButton>
-          <DisclosurePanel className="mt-2 text-sm/5 text-white/50">
-            <span>
-              <ul>
-                <li>
-                  Programming Languages/Frameworks:
-                  <ul>
-                    <li className="items">HTML,CSS & Javascript</li>
-                    <li className="items">TypeScript</li>
-                    <li className="items">SQL</li>
-                    <li className="items">NoSQL</li>
-                    <li className="items">Python</li>
-                    <li className="items">React</li>
-                  </ul>
-                </li>
-                <br/>
-                <li>
-                  Technical Skills:
-                  <li className="items">Backend Development</li>
-                  <li className="items">Frontend Development</li>
-                  <li className="items">Database implementation</li>
-                  <li className="items">AI Model development/training</li>
-                  <li className="items">Object-Oriented Programming</li>
-                  <li className="items">Linear Algebra & Computational Mathematics</li>
-                  <li className="items">Digital Design</li>
-                  <li></li>
-                </li>
-                <br/>
-                <li>
-                  Soft Skills:
-                </li>
-              </ul>
-            </span>
-          </DisclosurePanel>
-        </Disclosure>
+    <div className="min-h-screen bg-eggshell flex items-center justify-center p-4">
+      <div className="max-w-3xl w-full bg-white rounded-lg flex items-center">
+        <motion.div
+          className="hover:border-zomp-100 relative flex-shrink-0"
+          ref={avatarRef}
+          variants={avatarVariants}
+          initial="initial"
+          animate={isOpen ? "animate" : "initial"}
+        >
+          <AnimatedAvatar onClick={toggleDiv} />
+          
+        </motion.div>
+
+        {!isOpen && (
+            <h1 className="fixed top-60 left-45 bg-icterine rotate-[-0.8rad] shadow-lg text-6xl -translate-x-1/2 -translate-y-1/2">
+              Click Me!
+            </h1>
+          )}
+
+        {isOpen && (
+          <motion.div
+            className="flex flex-col items-start justify-center pt-10 pl-4 flex-grow"
+            variants={textVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <h1 className="text-4xl font-bold text-brunswick_green">Mary Brantnall</h1>
+            <p className="mt-2 text-lg text-reseda_green">
+              AI Programming, Frontend Development & Design
+            </p>
+          </motion.div>
+        )}
       </div>
     </div>
-    </div></div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
+
