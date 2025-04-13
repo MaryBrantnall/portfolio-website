@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
+import PP from "../../../public/PP.jpg";
 
 
 const AnimatedAvatar = ({ onClick }) => {
@@ -16,7 +17,7 @@ const AnimatedAvatar = ({ onClick }) => {
         <div className="relative">
           <Avatar
             alt="Remy Sharp"
-            src="src/assets/PP.jpg"
+            src={PP}
             onClick={handleClick}
             on
             sx={{
