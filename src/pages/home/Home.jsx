@@ -10,18 +10,16 @@ const Home = () => {
     setIsOpen(!isOpen);
   };
 
-  // Avatar animation variants
   const avatarVariants = {
     initial: { 
-      x: 0, // Start in the middle
+      x: 0,
     },
     animate: {
-      x: -150, // Move left (adjust as needed)
+      x: -150,
       transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
 
-  // Text animation variants
   const textVariants = {
     initial: { x: 100, opacity: 0 },
     animate: {
