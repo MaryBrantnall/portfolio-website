@@ -13,11 +13,7 @@ const GitHubRepos = () => {
     fetch(`https://api.github.com/users/${username}/repos`)
       .then((response) => response.json())
       .then((data) => {
-        
-        const filteredRepos = data.filter((repo) =>
-          ['SimpleTileGame', 'webd5015-project-duedogs', 'portfolio-website', 'NN-Web', 'Willow-Clicker'].includes(repo.name)
-        );
-        setRepos(filteredRepos);
+        setRepos(data);
       })
       .catch((error) => console.error('Error fetching repos:', error));
   }, [username]);
