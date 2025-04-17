@@ -30,12 +30,10 @@ const Resume = () => {
   return (
     <div className="min-h-screen bg-eggshell flex items-center justify-center p-4">
       <div className="max-w-3xl w-full bg-eggshell rounded-lg shadow-lg overflow-hidden">
-        {/* Header Section */}
         <div className="bg-brunswick_green p-6 text-center text-eggshell">
           <h1 className="text-3xl mb-2">Resume</h1>
         </div>
 
-        {/* Overview Section */}
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -51,7 +49,6 @@ const Resume = () => {
           )}
         </section>
 
-        {/* Skills Section */}
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -74,7 +71,6 @@ const Resume = () => {
           )}
         </section>
 
-        {/* Experience Section */}
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -85,7 +81,6 @@ const Resume = () => {
           </div>
           {openSections.experience && (
             <div className="mt-4 space-y-4 text-brunswick_green">
-              {/* Eastlink */}
               <div>
                 <h3 className="text-lg font-semibold">Eastlink / Sales Associate</h3>
                 <p className="text-sm text-brunswick_green">November 2024 - Present, Dartmouth, NS</p>
@@ -94,8 +89,6 @@ const Resume = () => {
                   <li>Meeting/surpassing sales targets for Eastlink home service/mobile plans</li>
                 </ul>
               </div>
-
-              {/* Truverus */}
               <div>
                 <h3 className="text-lg font-semibold">Truverus / UX/UI Design & Frontend Developer Intern</h3>
                 <p className="text-sm text-brunswick_green">April 2024 - July 2024, Halifax, NS</p>
@@ -104,8 +97,6 @@ const Resume = () => {
                   <li>Using Figma to create wireframes for new screens in the application</li>
                 </ul>
               </div>
-
-              {/* The Source */}
               <div>
                 <h3 className="text-lg font-semibold">The Source / Sales Associate</h3>
                 <p className="text-sm text-brunswick_green">July 2019 - April 2024, Halifax, NS</p>
@@ -118,7 +109,7 @@ const Resume = () => {
           )}
         </section>
 
-        {/* Education Section */}
+
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -129,7 +120,7 @@ const Resume = () => {
           </div>
           {openSections.education && (
             <div className="mt-4 space-y-4 text-brunswick_green">
-              {/* NSCC - AI Programming */}
+          
               <div>
                 <h3 className="text-lg font-semibold">
                   Nova Scotia Community College - IT Programming for Artificial Intelligence
@@ -137,13 +128,11 @@ const Resume = () => {
                 <p className="text-sm text-brunswick_green">September 2024 - June 2025, Halifax, NS</p>
               </div>
 
-              {/* NSCC - Full Stack */}
               <div>
                 <h3 className="text-lg font-semibold">Nova Scotia Community College - Full Stack Application Development</h3>
                 <p className="text-sm text-brunswick_green">September 2023 - June 2024, Halifax, NS</p>
               </div>
 
-              {/* NSCAD */}
               <div>
                 <h3 className="text-lg font-semibold">Nova Scotia College of Art and Design (NSCAD University) - Bachelor of Fine Arts</h3>
                 <p className="text-sm text-brunswick_green">January 2017 - May 2020, Halifax, NS</p>
@@ -152,7 +141,6 @@ const Resume = () => {
           )}
         </section>
 
-        {/* Volunteer Experiences Section */}
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -169,7 +157,6 @@ const Resume = () => {
           )}
         </section>
 
-        {/* Hackathons/Projects Section */}
         <section className="p-6 border-b border-ash_gray">
           <div
             className="flex items-center justify-between cursor-pointer"
@@ -186,7 +173,6 @@ const Resume = () => {
           )}
         </section>
 
-        {/* References Section */}
         <section className="p-6">
           <div
             className="flex items-center justify-between cursor-pointer"
