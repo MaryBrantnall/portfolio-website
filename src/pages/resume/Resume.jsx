@@ -44,7 +44,7 @@ const Resume = () => {
           </div>
           {openSections.overview && (
             <div className="mt-4 text-brunswick_green">
-              AI programming student from NSCC with a Bachelor of Fine Arts and a graduate certificate in Full Stack Development. Over 10 years of customer service experience, 4+ years in sales, freelance design expertise and front-end development internship experience. A versatile individual with a passion for lifelong learning and a strong, adaptable skill set.
+             I am a full-stack developer currently seeking employment opportunities in a technical field related to software and web development. With over 10 years of experience in customer-facing roles, a highly technical background in computer programming and over 3 years of experience working in Agile workflows, I am proficient at seeing a product or service from ideation to delivery. 4+ years in sales, freelance design expertise and front-end development internship experience. A versatile individual with a passion for lifelong learning and a strong, adaptable skill set.
             </div>
           )}
         </section>
@@ -81,6 +81,27 @@ const Resume = () => {
           </div>
           {openSections.experience && (
             <div className="mt-4 space-y-4 text-brunswick_green">
+                <div>
+                <h3 className="text-lg font-semibold">Smartbench Software / Junior Developer</h3>
+                <p className="text-sm text-brunswick_green">October 2025 - May 2026, Halifax, NS</p>
+                <ul className="list-disc list-inside">
+                  <li>Helping implement new features in Onshape used by manufacturing companies and engineers</li>
+                  <li>Programming in featurescript, C# and within the ASP.net framework building features/apps used in CAD software</li>
+                  <li>Assisting with marketing and training documentation through graphic design work and providing template code for future employees. </li>
+                  <li>Collaborating with product stakeholders to develop cloud-based features</li>
+                </ul>
+              </div>
+                <div>
+                <h3 className="text-lg font-semibold">Dash Social / Development Intern</h3>
+                <p className="text-sm text-brunswick_green">May 2025 - September 2025, Halifax, NS</p>
+                <ul className="list-disc list-inside">
+                  <li>Helped implement new features and bug fixes for the Dash Social cloud-based modern full‑stack web application</li>
+                  <li>Worked on backend and frontend tickets using Vue.js, Python and Flask</li>
+                  <li>Working with Git/Github version control and Docker containerization on the backend</li>
+                  <li>Worked cross-functionally with various teams within the company</li>
+                  <li>Worked with relational SQL database (MySQL)</li>
+                </ul>
+              </div>
               <div>
                 <h3 className="text-lg font-semibold">Eastlink / Sales Associate</h3>
                 <p className="text-sm text-brunswick_green">November 2024 - Present, Dartmouth, NS</p>
@@ -103,6 +124,16 @@ const Resume = () => {
                 <ul className="list-disc list-inside">
                   <li>Operate point-of-sale system</li>
                   <li>Meet sales targets for Bell home service/mobile plans</li>
+                </ul>
+              </div>
+                <div>
+                <h3 className="text-lg font-semibold">The Craig Gallery / Interim Gallery Coordinator/Community Art Facillitator</h3>
+                <p className="text-sm text-brunswick_green">July 2019 - April 2024, Halifax, NS</p>
+                <ul className="list-disc list-inside">
+                  <li>Scheduled upcoming exhibitions</li>
+                  <li>Prepared the gallery for shows</li>
+                  <li>Coordinated volunteers</li>
+                  <li>Organized and facilitated community art education through the "Art Carts" program</li>
                 </ul>
               </div>
             </div>
