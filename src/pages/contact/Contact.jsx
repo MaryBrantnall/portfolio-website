@@ -57,7 +57,7 @@ const Contact = () => {
           
           <div className="pt-4">
             <h3 className="font-semibold text-reseda_green">Location</h3>
-            <p className="text-brunswick_green">Halifax, Canada</p>
+            <p className="text-brunswick_green">Moncton NB, Canada</p>
           </div>
         </div>
       </div>

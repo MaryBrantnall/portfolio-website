@@ -19,7 +19,7 @@ const GitHubRepos = () => {
   }, [username]);
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '16px' }}>
+    <div style={{ minHeight: '25vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '16px' }}>
       <Typography variant="h4" component="h1" fontWeight="bold" gutterBottom>
         GitHub Projects:
       </Typography>
